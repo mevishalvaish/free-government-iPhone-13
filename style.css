@@ -1,0 +1,329 @@
+:root {
+    --bg-color: #0d1f12;
+    /* Midnight Green Dark */
+    --text-color: #e0e7e1;
+    --accent-color: #4ade80;
+    /* Bright Green */
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --sidebar-width: 100px;
+    --font-main: 'DM Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    width: var(--sidebar-width);
+    background: rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--accent-color);
+}
+
+.sidebar-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    color: white;
+    border-right: 3px solid var(--accent-color);
+}
+
+.sidebar-nav .nav-cta {
+    writing-mode: horizontal-tb;
+    transform: none;
+    background: var(--accent-color);
+    color: #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 0.7rem;
+    border: none;
+}
+
+.sidebar-nav .nav-cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+/* Main Content */
+.content-wrapper {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 4rem 8%;
+    max-width: 1200px;
+}
+
+/* Header */
+.page-header {
+    margin-bottom: 4rem;
+}
+
+.pill {
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.lead {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Hero Image */
+.hero-section {
+    margin-bottom: 4rem;
+}
+
+.image-frame {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-frame img {
+    width: 100%;
+    display: block;
+}
+
+/* Article */
+.article-body {
+    max-width: 800px;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* CTA */
+.cta-section {
+    background: linear-gradient(to right, #1a2f21, #0d1f12);
+    padding: 3rem;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    margin-bottom: 3rem;
+}
+
+.cta-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-wrapper {
+    margin: 2rem 0;
+}
+
+.clickbait-link {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #052e16;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+    transition: all 0.2s;
+    animation: glow 2s infinite;
+}
+
+.clickbait-link:hover {
+    transform: scale(1.05);
+    background: #86efac;
+}
+
+.terms {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Checklist */
+.checklist {
+    list-style: none;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.checklist li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.checklist li::before {
+    content: "✓";
+    color: var(--accent-color);
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        padding: 2rem;
+    }
+
+    .sidebar-nav nav {
+        flex-direction: row;
+        width: auto;
+        gap: 1rem;
+    }
+
+    .sidebar-nav a {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
